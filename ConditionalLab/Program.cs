@@ -10,44 +10,43 @@ namespace ConditionalLab
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Please enter your yearly salary: ");
-            //var input = Console.ReadLine();
-            //double incomeTier = int.Parse(input);
+            Console.WriteLine("Please enter your salary so we know how to tax yas!");
+            var input = Console.ReadLine();
+            double incomeAmount = int.Parse(input);
+            double taxRate = 0.0;
+            if (incomeAmount > 20000.0)
+            {
+                taxRate = taxRate + 20000.0 * 0.05;
+            }
+            else if (incomeAmount > 0.0)
+            {
+                taxRate = taxRate + incomeAmount * 0.05;
+            }
+            if (incomeAmount > 50000.0)
+            {
+                taxRate = taxRate + (50000.0 - 20000.0) * 0.10;
+            }
+            else if (incomeAmount > 20000.0)
+            {
+                taxRate = taxRate + (incomeAmount - 30000.0) * 0.10;
+            }
+            if (incomeAmount > 75000.0)
+            {
+                taxRate = taxRate + (75000.0 - 50000.0) * 0.20;
+            }
+            else if (incomeAmount > 50000.0)
+            {
+                taxRate = taxRate + (incomeAmount - 50000.0) * 0.20;
+            }
+            if (incomeAmount > 75000.0)
+            {
+                taxRate = taxRate + (incomeAmount - 75000.0) * 0.35;
+            }
 
-            //if (incomeTier <= 20000)
-            //{
-            //    incomeTier = incomeTier * 1.05;
-            //}
-            //else if (incomeTier >= 20000 && incomeTier <= 50000) 
-            //{
-            //    incomeTier = incomeTier * 1.10;
-            //}
+            Console.WriteLine("income: ${0}", incomeAmount);
+            Console.WriteLine("tax: ${0}", taxRate);
 
-            //else if (incomeTier >= 50000 && incomeTier <= 75000) 
-            //{
-            //    incomeTier = incomeTier * 1.20;
-            //}
-            //else if (incomeTier >= 75000) 
-            //{
-            //    incomeTier = incomeTier * 1.35;
-            //}
-
-            //Console.Write(incomeTier);
-
-            //Console.ReadLine();
-
-
-            var taxPercentage = new [] 
-            { 
-                new Bracket(0, 20000),
-                new Bracket(20000,50000),
-                new Bracket(50000,75000),
-                new Bracket(75000,int.MaxValue)
-            };
-
-            var taxSystem = incomeTaxCalculator(taxPercentage);
-
-
+            Console.ReadLine();
         }
     }
 }
