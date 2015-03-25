@@ -100,36 +100,33 @@ namespace ConditionalLab
              * Fizz Buzz
              */
 
-           
-            for (int i = 0; i < 100; i++) 
-            {
-                if (i == 0) 
-                {
-                    Console.WriteLine("0");
-                }
 
-                else if ((i % 3 == 0) && (i % 15 == 0))
-                {
-                    Console.WriteLine("FizzBuzz");
-                }
-                
-                else if (i % 3 == 0) 
-                {
-                    Console.WriteLine("Fizz");
-                }
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    if (i == 0)
+            //        Console.WriteLine("0");
+            //    else if ((i % 3 == 0) && (i % 5 == 0))
+            //        Console.WriteLine("FizzBuzz");
+            //    else if (i % 3 == 0)
+            //        Console.WriteLine("Fizz");
+            //    else if (i % 5 == 0)
+            //        Console.WriteLine("Buzz");
+            //    else
+            //        Console.WriteLine(i);
+            //}
 
-                else if (i % 5 == 0) 
-                {
-                    Console.WriteLine("Buzz");
-                }
+            //Console.ReadLine();
 
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
+            /*
+             Reverse
+            */
 
+            Console.WriteLine("Please enter in a string");
+            string input = Console.ReadLine();
 
+            char[] charArray = input.ToCharArray();
+            Array.Reverse(charArray);
+            Console.WriteLine(charArray);
 
             Console.ReadLine();
         }
