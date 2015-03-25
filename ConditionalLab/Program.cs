@@ -128,6 +128,7 @@ namespace ConditionalLab
             Array.Reverse(charArray);
             Console.WriteLine(charArray);
 
+
             Console.ReadLine();
         }
     }
